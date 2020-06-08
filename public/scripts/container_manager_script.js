@@ -47,6 +47,9 @@ document.addEventListener('mousemove', (event) => {
     if (scale && scalePos !== null && scaleElement !== null) {
         scaleElement.style.zIndex = "1";
         // Create logic to scale element
+        var posX = event.clientX - getOffset(mainContainer).left;
+        var posY = event.clientY- getOffset(mainContainer).top;
+        scalePos = { y: posY, x: posX };
         scaleElementToSize();
     }
 });
@@ -123,8 +126,12 @@ function moveElementToPos(){
 
 function scaleElementToSize() {
     // Scaling logic goes here
-    // Need to take the dimensions of the container, then take the coordinates of the mouse and subtract they from each other.
+    // Need to take the dimensions of the container, then take the coordinates of the mouse and subtract them from each other.
     // When that is calculated, simply add this to the height and width of container element
+    var newWidth = scalePos.x - scaleElement.offsetLeft;
+    var newHeight = scalePos.y - scaleElement.offsetTop;
+    scaleElement.style.width = newWidth + 'px';
+    scaleElement.style.height = newHeight + 'px';
 }
 
 // Get offset of element to calculate where to put element when dragging
