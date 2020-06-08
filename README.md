@@ -1,5 +1,7 @@
 # Node.js notes
 
+This is the new Repository for the DiY Smart Mirror
+
 create project folder
 Run command "npm init"
 create app.js / server.js or whatever
