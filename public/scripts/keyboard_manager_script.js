@@ -4,26 +4,60 @@ var mainContainer = document.getElementsByClassName('main-container')[0];
 var keyboardContainer = document.getElementById('keyboard_container');
 var containers = document.getElementsByClassName('container');
 
+var lastClickedInputField = null;
+var caps = false;
+var shift = false;
+
+document.getElementById('youtube_search').addEventListener('mousedown', (event) => {
+    lastClickedInputField = event.target;
+});
+
 
 var btn_keys = document.getElementsByClassName('btn_key');
 //console.log("Found " + btn_keys.length + " btn_keys");
 for (var i = 0; i < btn_keys.length; i++)
 {
     btn_keys[i].addEventListener('mousedown', (event) => {
-        handleKeyClick(event);
+        //handleKeyClick(event.target);
+        if (lastClickedInputField !== null) {
+            handleKeyClick(event.target);
+        }
     });
 }
 
 function handleKeyClick(key) {
-    //console.log("Key was clicked");
-    //console.log(key);
-    // for (var i = 0; i < containers.length; i++)
-    // {
-    //     containers[i].style.zIndex = "0";
-    // }
-    //keyboardContainer.style.zIndex = "1";
+    //
+    if (key.className.includes('reg_key')) {
+        if (caps || shift) {
+            lastClickedInputField.value = lastClickedInputField.value + key.innerHTML;
+        } else {
+            lastClickedInputField.value = lastClickedInputField.value + key.innerHTML.toLowerCase();
+        }
+        shift = false;
+    }
+    else if (key.className.includes('del_key')) {
+        lastClickedInputField.value = lastClickedInputField.value.substring(0, lastClickedInputField.value.length - 1);
+    }
+    else if (key.className.includes('space_key')) {
+        lastClickedInputField.value = lastClickedInputField.value + ' ';
+    }
+    else if (key.className.includes('cap_key')) {
+        if (caps === false) {
+            caps = true;
+        } else {
+            caps = false;
+        }
+    }
+    else if (key.className.includes('shift_key') || key.className.includes('shift_long_key')) {
+        shift = true;
+    }
+    else if (key.className.includes('ent_key')) {
+        console.log("Enter was pressed");
+    }
+    else {
+        console.log(key.className);
+    }
 }
-
 
 
 

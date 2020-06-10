@@ -53,6 +53,13 @@
     background-color: white;
     color: black;
 }
+#key_plus, #key_pipe {
+    width: 43px;
+}
+#key_plus:hover, #key_pipe:hover {
+    background-color: white;
+    color: black;
+}
 
 /* Row 2 Keys */
 #key_tap {
@@ -71,10 +78,14 @@
     background-color: black;
     height: 100%
 }
-/* #key_ent_top:hover + #row_4::#key_ent_bottom {
+
+#key_arrow_up {
+    width: 43px;
+}
+#key_arrow_up:hover {
     background-color: white;
     color: black;
-} */
+}
 
 /* Row 3 Keys */
 #key_cap {
@@ -93,6 +104,14 @@
     background-color: black;
 }
 
+#key_star {
+    width: 43px;
+}
+#key_star:hover {
+    background-color: white;
+    color: black;
+}
+
 /* Row 4 Keys */
 #key_shift {
     width: 55px;
@@ -104,7 +123,7 @@
 
 
 #key_shift_long {
-    width: 136px;
+    width: 181px;
 }
 #key_shift_long:hover {
     background-color: white;
