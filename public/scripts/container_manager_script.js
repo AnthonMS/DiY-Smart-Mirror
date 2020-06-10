@@ -1,6 +1,6 @@
 console.log("Import - Container Manager");
 
-var mainContainer = null;
+var mainContainer = document.getElementsByClassName('main-container')[0];
 
 var drag = false;
 var dragPos = null;
@@ -10,7 +10,6 @@ var scale = false;
 var scalePos = null;
 var scaleElement = null;
 
-mainContainer = document.getElementsByClassName('main-container')[0];
 document.getElementById('youtube_container').style.backgroundColor = "blue";
 document.getElementById('spotify_container').style.backgroundColor = "green";
 document.getElementById('youtube_container').style.display = "none";
@@ -67,13 +66,25 @@ var elements = document.getElementsByClassName('container');
 for (var i = 0; i < elements.length; i++)
 {
     elements[i].addEventListener('mousedown', (event) => {
+        // Go through all containers and make zIndex 0
         var containers = document.getElementsByClassName('container');
         for (var i = 0; i < containers.length; i++)
         {
             containers[i].style.zIndex = "0";
         }
 
-        event.target.style.zIndex = "1";
+        // check if clicked element has class container
+        // if not find closest element that does
+        // And make the container that was closest to clicked element zIndex 1
+        if (event.target.className.includes('container')){
+            console.log("clicked on container");
+            event.target.style.zIndex = "1";
+        }
+        else {
+            console.log("NOT clicked on container");
+            console.log(event.target.closest('.container'));
+            event.target.closest('.container').style.zIndex = "1";
+        }
     });
 }
 

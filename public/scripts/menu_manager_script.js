@@ -1,8 +1,6 @@
 console.log("Import - Menu Manager");
 
-var mainContainer = null;
-
-mainContainer = document.getElementsByClassName('main-container')[0];
+var mainContainer = document.getElementsByClassName('main-container')[0];
 //document.getElementById('youtube_container');
 //document.getElementById('spotify_container');
 
