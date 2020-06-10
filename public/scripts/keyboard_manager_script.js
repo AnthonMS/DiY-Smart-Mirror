@@ -8,6 +8,13 @@ var lastClickedInputField = null;
 var caps = false;
 var shift = false;
 
+// function youtubeInit() {
+//     gapi.client.setApiKey("AIzaSyD89LUjdU1AEtSgD3dZWhTvNvz94rvwjUM");
+//     gapi.client.load('youtube', 'v3', () => {
+//         console.log('Youtube api ready!');
+//     });
+// }
+
 document.getElementById('youtube_search').addEventListener('mousedown', (event) => {
     lastClickedInputField = event.target;
 });
@@ -26,7 +33,7 @@ for (var i = 0; i < btn_keys.length; i++)
 }
 
 function handleKeyClick(key) {
-    //
+    // If key pressed was a character
     if (key.className.includes('reg_key')) {
         if (caps || shift) {
             lastClickedInputField.value = lastClickedInputField.value + key.innerHTML;
@@ -35,12 +42,15 @@ function handleKeyClick(key) {
         }
         shift = false;
     }
+    // If key was delete
     else if (key.className.includes('del_key')) {
         lastClickedInputField.value = lastClickedInputField.value.substring(0, lastClickedInputField.value.length - 1);
     }
+    // If key was space
     else if (key.className.includes('space_key')) {
         lastClickedInputField.value = lastClickedInputField.value + ' ';
     }
+    // If key caps space
     else if (key.className.includes('cap_key')) {
         if (caps === false) {
             caps = true;
@@ -48,11 +58,15 @@ function handleKeyClick(key) {
             caps = false;
         }
     }
+    // If key was shift
     else if (key.className.includes('shift_key') || key.className.includes('shift_long_key')) {
         shift = true;
     }
+    // If key was enter
     else if (key.className.includes('ent_key')) {
-        console.log("Enter was pressed");
+        if (lastClickedInputField.value !== "") {
+            searchYoutube();
+        }
     }
     else {
         console.log(key.className);
@@ -61,7 +75,13 @@ function handleKeyClick(key) {
 
 
 
-
+async function searchYoutube() {
+    console.log("Calling async func");
+    const response = await fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&key=&type=video&q=' + encodeURIComponent(lastClickedInputField.value));
+    const myJson = await response.json(); //extract JSON from the http response
+    // do something with myJson
+    console.log(myJson.items)
+}
 
 
 
