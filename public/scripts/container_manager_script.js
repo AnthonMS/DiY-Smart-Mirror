@@ -14,6 +14,7 @@ document.getElementById('youtube_container').style.backgroundColor = "blue";
 document.getElementById('spotify_container').style.backgroundColor = "green";
 document.getElementById('youtube_container').style.display = "none";
 document.getElementById('spotify_container').style.display = "none";
+document.getElementById('keyboard_container').style.display = "none";
 document.getElementById('keyboard_container').style.width = "690px";
 document.getElementById('keyboard_container').style.height = "220px";
 
@@ -77,12 +78,9 @@ for (var i = 0; i < elements.length; i++)
         // if not find closest element that does
         // And make the container that was closest to clicked element zIndex 1
         if (event.target.className.includes('container')){
-            console.log("clicked on container");
             event.target.style.zIndex = "1";
         }
         else {
-            console.log("NOT clicked on container");
-            console.log(event.target.closest('.container'));
             event.target.closest('.container').style.zIndex = "1";
         }
     });
@@ -107,7 +105,6 @@ elements = document.getElementsByClassName('btn_close');
 for (var i = 0; i < elements.length; i++)
 {
     elements[i].addEventListener('mousedown', (event) => {
-        console.log(event.target.parentNode.id);
         document.getElementById(event.target.parentNode.id).style.display = 'none';
     });
 }
@@ -141,6 +138,7 @@ function moveElementToPos(){
     dragElement.style.top = dragPos.y + 'px';
 }
 
+// Scale scaleElement to scalePos when function is called
 function scaleElementToSize() {
     var tmpPosX = scalePos.x - 10;
     var tmpPosY = scalePos.y - 10;
@@ -151,7 +149,7 @@ function scaleElementToSize() {
     scaleElement.style.height = newHeight + 'px';
 }
 
-// Get offset of element to calculate where to put element when dragging
+// Get offset of element to calculate where to put element when dragging and scaling
 function getOffset( el ) {
     var _x = 0;
     var _y = 0;

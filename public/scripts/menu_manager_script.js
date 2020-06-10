@@ -13,15 +13,42 @@ for (var i = 0; i < elements.length; i++)
 }
 
 function handleButtonClick(button) {
-    //console.log(button.textContent);
+    //console.log(button.parentNode);
     if (button.textContent == "Youtube") {
-        toggleContainer(document.getElementById('youtube_container'));
+        youtubeContainer = document.getElementById('youtube_container');
+        toggleContainer(youtubeContainer);
+        if (youtubeContainer.style.display == 'none') {
+            button.parentNode.style.backgroundColor = "black";
+            button.style.color = "white";
+        }
+        else {
+            button.parentNode.style.backgroundColor = "white";
+            button.style.color = "black";
+        }
     }
     else if (button.textContent == "Spotify") {
-        toggleContainer(document.getElementById('spotify_container'));
+        spotifyContainer = document.getElementById('spotify_container');
+        toggleContainer(spotifyContainer);
+        if (spotifyContainer.style.display == 'none') {
+            button.parentNode.style.backgroundColor = "black";
+            button.style.color = "white";
+        }
+        else {
+            button.parentNode.style.backgroundColor = "white";
+            button.style.color = "black";
+        }
     }
     else if (button.textContent == "Keyboard") {
-        toggleContainer(document.getElementById('keyboard_container'));
+        keyboardContainer = document.getElementById('keyboard_container');
+        toggleContainer(keyboardContainer);
+        if (keyboardContainer.style.display == 'none') {
+            button.parentNode.style.backgroundColor = "black";
+            button.style.color = "white";
+        }
+        else {
+            button.parentNode.style.backgroundColor = "white";
+            button.style.color = "black";
+        }
     }
 }
 
