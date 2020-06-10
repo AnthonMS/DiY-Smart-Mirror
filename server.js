@@ -8,5 +8,5 @@ app.use(express.static(__dirname + '/public'));
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 app.get('/', (request, response) => {
-  response.sendFile(__dirname + '/public/demo-file.html');
+  response.sendFile(__dirname + '/public/front-end.html');
 });

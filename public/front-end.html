@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/styling.css">
+        <script type="text/javascript" src="/script.js"></script>
+    </head>
+    <body onload="init()">
+        <div class="main-container">
+
+            <div class="button_list">
+                <div class="menu_button" id="keyboard_button">
+                    <p class="btn_txt">Keyboard</p>
+                </div>
+                <div class="menu_button" id="youtube_button">
+                    <p class="btn_txt">Youtube</p>
+                </div>
+                <div class="menu_button" id="spotify_button">
+                    <p class="btn_txt">Spotify</p>
+                </div>
+            </div>
+
+            <div class="container" id="keyboard_container">
+                <div class="btn_drag"></div>
+                <div class="btn_close"></div>
+
+                <div class="keyboard_row" id="row_1">
+                    <div class="reg_key white_border" id="key_half">½</div>
+                    <div class="reg_key white_border" id="key_1">1</div>
+                    <div class="reg_key white_border" id="key_2">2</div>
+                    <div class="reg_key white_border" id="key_3">3</div>
+                    <div class="reg_key white_border" id="key_4">4</div>
+                    <div class="reg_key white_border" id="key_5">5</div>
+                    <div class="reg_key white_border" id="key_6">6</div>
+                    <div class="reg_key white_border" id="key_7">7</div>
+                    <div class="reg_key white_border" id="key_8">8</div>
+                    <div class="reg_key white_border" id="key_9">9</div>
+                    <div class="reg_key white_border" id="key_0">0</div>
+                    <div class="reg_key white_border" id="key_plus">+</div>
+                    <div class="reg_key white_border" id="key_pipe">´</div>
+                    <div class="del_key white_border" id="key_del">Delete</div>
+                </div>
+
+                <div class="keyboard_row" id="row_2">
+                    <div class="tap_key white_border" id="key_tap">Tab</div>
+                    <div class="reg_key white_border" id="key_1">Q</div>
+                    <div class="reg_key white_border" id="key_2">W</div>
+                    <div class="reg_key white_border" id="key_3">E</div>
+                    <div class="reg_key white_border" id="key_4">R</div>
+                    <div class="reg_key white_border" id="key_5">T</div>
+                    <div class="reg_key white_border" id="key_6">Y</div>
+                    <div class="reg_key white_border" id="key_7">U</div>
+                    <div class="reg_key white_border" id="key_8">I</div>
+                    <div class="reg_key white_border" id="key_9">O</div>
+                    <div class="reg_key white_border" id="key_0">P</div>
+                    <div class="reg_key white_border" id="key_plus">Å</div>
+                    <div class="reg_key white_border" id="key_pipe">^</div>
+                    <div class="ent_key" id="key_ent_top">Enter</div>
+                </div>
+
+                <div class="keyboard_row" id="row_3">
+                    <div class="cap_key white_border" id="key_cap">Caps</div>
+                    <div class="reg_key white_border" id="key_1">A</div>
+                    <div class="reg_key white_border" id="key_2">S</div>
+                    <div class="reg_key white_border" id="key_3">D</div>
+                    <div class="reg_key white_border" id="key_4">F</div>
+                    <div class="reg_key white_border" id="key_5">G</div>
+                    <div class="reg_key white_border" id="key_6">H</div>
+                    <div class="reg_key white_border" id="key_7">J</div>
+                    <div class="reg_key white_border" id="key_8">K</div>
+                    <div class="reg_key white_border" id="key_9">L</div>
+                    <div class="reg_key white_border" id="key_0">Æ</div>
+                    <div class="reg_key white_border" id="key_plus">Ø</div>
+                    <div class="reg_key white_border" id="key_pipe">*</div>
+                    <div class="ent_key" id="key_ent_bottom"></div>
+                </div>
+
+                <div class="keyboard_row" id="row_4">
+                    <div class="shift_key white_border" id="key_shift">Shift</div>
+                    <div class="reg_key white_border" id="key_1">Q</div>
+                    <div class="reg_key white_border" id="key_2">W</div>
+                    <div class="reg_key white_border" id="key_3">E</div>
+                    <div class="reg_key white_border" id="key_4">R</div>
+                    <div class="reg_key white_border" id="key_5">T</div>
+                    <div class="reg_key white_border" id="key_6">Y</div>
+                    <div class="reg_key white_border" id="key_7">U</div>
+                    <div class="reg_key white_border" id="key_8">I</div>
+                    <div class="reg_key white_border" id="key_9">O</div>
+                    <div class="reg_key white_border" id="key_0">P</div>
+                    <div class="reg_key white_border" id="key_plus">Å</div>
+                    <div class="shift_long_key white_border" id="key_shift_long">Shift</div>
+                </div>
+
+                <div class="keyboard_row">
+                    <div class="ctrl_key white_border" id="key_ctrl_left">Ctrl</div>
+                    <div class="win_key white_border" id="key_win_left">Win</div>
+                    <div class="alt_key white_border" id="key_alt">Alt</div>
+                    <div class="space_key white_border" id="key_space">Space</div>
+                    <div class="alt_key white_border" id="key_alt_gr">Alt Gr</div>
+                    <div class="win_key white_border" id="key_win_right">Win</div>
+                    <div class="ctrl_key white_border" id="key_ctrl_right">Ctrl</div>
+                </div>
+            </div>
+
+            <div class="container" id="youtube_container">
+                <div class="btn_drag"></div>
+                <div class="btn_close"></div>
+                <div class="btn_scale"></div>
+            </div>
+
+            <div class="container" id="spotify_container">
+                <div class="btn_drag"></div>
+                <div class="btn_close"></div>
+                <div class="btn_scale"></div>
+            </div>
+
+        </div>
+    </body>
+</html>

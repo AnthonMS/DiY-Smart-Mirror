@@ -1,3 +1,5 @@
+console.log("Import - Container Manager");
+
 var mainContainer = null;
 
 var drag = false;
@@ -13,6 +15,8 @@ document.getElementById('youtube_container').style.backgroundColor = "blue";
 document.getElementById('spotify_container').style.backgroundColor = "green";
 document.getElementById('youtube_container').style.display = "none";
 document.getElementById('spotify_container').style.display = "none";
+document.getElementById('keyboard_container').style.width = "690px";
+document.getElementById('keyboard_container').style.height = "220px";
 
 // #### Event Listeners for Document #### //
 // Add Event Listeners to the document to handle dragging function.
@@ -102,7 +106,6 @@ elements = document.getElementsByClassName('btn_scale');
 for (var i = 0; i < elements.length; i++)
 {
     elements[i].addEventListener('mousedown', (event) => {
-        console.log('Scale button clicked...');
         scale = true;
 
         var relX = event.clientX - getOffset(mainContainer).left;
@@ -120,14 +123,17 @@ for (var i = 0; i < elements.length; i++)
 
 // Move dragElement to dragPos when function is called
 function moveElementToPos(){
+    var tmpPosX = dragPos.x - 10;
+    var tmpPosY = dragPos.y - 10;
+
     dragElement.style.left = dragPos.x + 'px';
     dragElement.style.top = dragPos.y + 'px';
 }
 
 function scaleElementToSize() {
-    // Scaling logic goes here
-    // Need to take the dimensions of the container, then take the coordinates of the mouse and subtract them from each other.
-    // When that is calculated, simply add this to the height and width of container element
+    var tmpPosX = scalePos.x - 10;
+    var tmpPosY = scalePos.y - 10;
+    
     var newWidth = scalePos.x - scaleElement.offsetLeft;
     var newHeight = scalePos.y - scaleElement.offsetTop;
     scaleElement.style.width = newWidth + 'px';

@@ -1,0 +1,147 @@
+.keyboard_row {
+    border: 0px solid blue;
+    height: 20%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* #row_1 {
+    width: 690px;
+}
+#row_2 {
+    width: 597px;
+}
+#row_3 {
+    width: 610px;
+} */
+
+
+.keyboard_row div {
+    color: white;
+    float: left;
+    height: 95%;
+    font-weight: bold;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+/* .keyboard_row div:hover {
+    color: black;
+} */
+
+.white_border {
+    border: 1px solid white;
+    background-color: black;
+}
+
+.reg_key {
+    width: 43px;
+}
+.reg_key:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Row 1 Keys */
+#key_del {
+    width: 103px;
+}
+#key_del:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Row 2 Keys */
+#key_tap {
+    width: 55px;
+}
+#key_tap:hover {
+    background-color: white;
+    color: black;
+}
+
+#key_ent_top {
+    width: 91px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    background-color: black;
+    height: 100%
+}
+/* #key_ent_top:hover + #row_4::#key_ent_bottom {
+    background-color: white;
+    color: black;
+} */
+
+/* Row 3 Keys */
+#key_cap {
+    width: 68px;
+}
+#key_cap:hover {
+    background-color: white;
+    color: black;
+}
+
+#key_ent_bottom {
+    width: 78px;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    background-color: black;
+}
+
+/* Row 4 Keys */
+#key_shift {
+    width: 55px;
+}
+#key_shift:hover {
+    background-color: white;
+    color: black;
+}
+
+
+#key_shift_long {
+    width: 136px;
+}
+#key_shift_long:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Row 5 Keys */
+.ctrl_key {
+    width: 63px;
+}
+.ctrl_key:hover {
+    background-color: white;
+    color: black;
+}
+
+.win_key {
+    width: 50px;
+}
+.win_key:hover {
+    background-color: white;
+    color: black;
+}
+
+.alt_key {
+    width: 52px;
+}
+.alt_key:hover {
+    background-color: white;
+    color: black;
+}
+
+#key_space {
+    width: 346px;
+}
+#key_space:hover {
+    background-color: white;
+    color: black;
+}
+
+

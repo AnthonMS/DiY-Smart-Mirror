@@ -1,5 +1,4 @@
-console.log("Menu Manager Imported");
-
+console.log("Import - Menu Manager");
 
 var mainContainer = null;
 
@@ -23,17 +22,17 @@ function handleButtonClick(button) {
     else if (button.textContent == "Spotify") {
         toggleContainer(document.getElementById('spotify_container'));
     }
+    else if (button.textContent == "Keyboard") {
+        toggleContainer(document.getElementById('keyboard_container'));
+    }
 }
 
 
-function toggleContainer(container)
-{
-    if (container.style.display === 'none')
-    {
+function toggleContainer(container) {
+    if (container.style.display === 'none') {
         container.style.display = 'block';
     }
-    else 
-    {
+    else {
         container.style.display = 'none';
     }
 }
