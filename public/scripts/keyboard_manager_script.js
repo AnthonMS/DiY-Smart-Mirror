@@ -8,13 +8,6 @@ var lastClickedInputField = null;
 var caps = false;
 var shift = false;
 
-// function youtubeInit() {
-//     gapi.client.setApiKey("AIzaSyD89LUjdU1AEtSgD3dZWhTvNvz94rvwjUM");
-//     gapi.client.load('youtube', 'v3', () => {
-//         console.log('Youtube api ready!');
-//     });
-// }
-
 document.getElementById('youtube_search').addEventListener('mousedown', (event) => {
     lastClickedInputField = event.target;
 });
