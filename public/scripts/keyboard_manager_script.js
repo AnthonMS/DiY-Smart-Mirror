@@ -79,14 +79,18 @@ async function searchYoutube() {
     const response = await fetch(fetchUrl);
     const myJson = await response.json(); //extract JSON from the http response
     // do something with myJson
+    clearVideoList();
     fillVideoList(myJson.items);
 
 }
 
+function clearVideoList() {
+    var videoList = document.getElementsByClassName('video_list')[0];
+    videoList.innerHTML = '';
+}
 
 function fillVideoList(items) {
     var videoList = document.getElementsByClassName('video_list')[0];
-    console.log(videoList);
     for (var i = 0; i < items.length; i++) {
         //console.log(items[i]);
         var videoId = items[i].id.videoId;
@@ -96,12 +100,23 @@ function fillVideoList(items) {
         var videoItem = createVideoItem(videoId, title, thumbnail);
         videoList.appendChild(videoItem);
 
+        videoItem.addEventListener('mousedown', (event) => {
+            var video = null;
+            if (event.target.className.includes('video_thumbnail') || event.target.className.includes('video_title')) {
+                video = event.target.closest('.video_item');
+            } else {
+                video = event.target;
+            }
+            console.log(video.getAttribute('videoId'));
+        });
+
     }
 }
 
 function createVideoItem(videoId, title, thumbnail) {
     var videoItem = document.createElement('div');
     videoItem.className = 'video_item';
+    videoItem.setAttribute('videoId', videoId);
     var imgItem = document.createElement('img');
     imgItem.className = 'video_thumbnail';
     imgItem.src = thumbnail;
