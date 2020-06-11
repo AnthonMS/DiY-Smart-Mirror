@@ -69,14 +69,52 @@ function handleKeyClick(key) {
 
 
 async function searchYoutube() {
-    console.log("Calling async func");
-    const response = await fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&key=&type=video&q=' + encodeURIComponent(lastClickedInputField.value));
+    var part = 'snippet';
+    var maxResults = 5;
+    var type = "video";
+    var q = encodeURIComponent(lastClickedInputField.value)
+    var key = "";
+    var fetchUrl = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&maxResults=" + maxResults + "&type=" + type + "&q=" + q + "&key=" + key;
+    // 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&key=&type=video&q=' + encodeURIComponent(lastClickedInputField.value)
+    const response = await fetch(fetchUrl);
     const myJson = await response.json(); //extract JSON from the http response
     // do something with myJson
-    console.log(myJson.items)
+    fillVideoList(myJson.items);
+
 }
 
 
+function fillVideoList(items) {
+    var videoList = document.getElementsByClassName('video_list')[0];
+    console.log(videoList);
+    for (var i = 0; i < items.length; i++) {
+        //console.log(items[i]);
+        var videoId = items[i].id.videoId;
+        var title = items[i].snippet.title;
+        var thumbnail = items[i].snippet.thumbnails.medium.url;
+        
+        var videoItem = createVideoItem(videoId, title, thumbnail);
+        videoList.appendChild(videoItem);
+
+    }
+}
+
+function createVideoItem(videoId, title, thumbnail) {
+    var videoItem = document.createElement('div');
+    videoItem.className = 'video_item';
+    var imgItem = document.createElement('img');
+    imgItem.className = 'video_thumbnail';
+    imgItem.src = thumbnail;
+    imgItem.alt = 'Thumbnail Missing';
+    var titleItem = document.createElement('p');
+    titleItem.className = 'video_title';
+    titleItem.innerHTML = title;
+
+    videoItem.appendChild(imgItem);
+    videoItem.appendChild(titleItem);
+
+    return videoItem;
+}
 
 
 
