@@ -10,17 +10,17 @@ var scale = false;
 var scalePos = null;
 var scaleElement = null;
 
-document.getElementById('spotify_container').style.backgroundColor = "green";
-document.getElementById('spotify_container').style.display = "none";
+//document.getElementById('spotify_container').style.backgroundColor = "green";
+//document.getElementById('spotify_container').style.display = "none";
 
-document.getElementById('youtube_container').style.display = "block";
+document.getElementById('youtube_container').style.display = "none";
 document.getElementById('youtube_container').style.width = "450px";
 document.getElementById('youtube_container').style.height = "350px";
 document.getElementById('youtube_container').style.left = '320px';
 document.getElementById('youtube_container').style.top = '100px';
 
 
-document.getElementById('keyboard_container').style.display = "block";
+document.getElementById('keyboard_container').style.display = "none";
 document.getElementById('keyboard_container').style.width = "690px";
 document.getElementById('keyboard_container').style.height = "220px";
 document.getElementById('keyboard_container').style.left = '220px';
