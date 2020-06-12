@@ -114,6 +114,7 @@ for (var i = 0; i < elements.length; i++)
 {
     elements[i].addEventListener('mousedown', (event) => {
         document.getElementById(event.target.parentNode.id).style.display = 'none';
+        document.getElementsByClassName('video_player_div')[0].innerHTML = "";
     });
 }
 

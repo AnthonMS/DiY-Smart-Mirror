@@ -18,36 +18,30 @@ function handleButtonClick(button) {
         youtubeContainer = document.getElementById('youtube_container');
         toggleContainer(youtubeContainer);
         if (youtubeContainer.style.display == 'none') {
-            button.parentNode.style.backgroundColor = "black";
-            button.style.color = "white";
+            document.getElementsByClassName('video_player_div')[0].innerHTML = "";
         }
         else {
-            button.parentNode.style.backgroundColor = "white";
-            button.style.color = "black";
+            document.getElementsByClassName('video_list')[0].style.display = "block";
         }
     }
     else if (button.textContent == "Spotify") {
         spotifyContainer = document.getElementById('spotify_container');
         toggleContainer(spotifyContainer);
         if (spotifyContainer.style.display == 'none') {
-            button.parentNode.style.backgroundColor = "black";
-            button.style.color = "white";
+            // Logic here
         }
         else {
-            button.parentNode.style.backgroundColor = "white";
-            button.style.color = "black";
+            // Logic here
         }
     }
     else if (button.textContent == "Keyboard") {
         keyboardContainer = document.getElementById('keyboard_container');
         toggleContainer(keyboardContainer);
         if (keyboardContainer.style.display == 'none') {
-            button.parentNode.style.backgroundColor = "black";
-            button.style.color = "white";
+            // Logic here
         }
         else {
-            button.parentNode.style.backgroundColor = "white";
-            button.style.color = "black";
+            // Logic here
         }
     }
 }
