@@ -12,7 +12,7 @@
 //     var maxResults = 5;
 //     var type = "video";
 //     var q = encodeURIComponent(value)
-//     var key = "AIzaSyCcxr_U_Rl6ZilgSr8XPM4YnCjEiMRXpEg";
+//     var key = "";
 //     var fetchUrl = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&maxResults=" + maxResults + "&type=" + type + "&q=" + q + "&key=" + key;
 //     const response = await fetch(fetchUrl);
 //     const myJson = await response.json(); //extract JSON from the http response
