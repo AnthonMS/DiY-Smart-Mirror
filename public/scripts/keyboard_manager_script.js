@@ -4,6 +4,8 @@ var mainContainer = document.getElementsByClassName('main-container')[0];
 var keyboardContainer = document.getElementById('keyboard_container');
 var containers = document.getElementsByClassName('container');
 
+document.getElementsByClassName('video_list')[0].style.display = "none";
+
 var lastClickedInputField = null;
 var caps = false;
 var shift = false;
@@ -58,6 +60,8 @@ function handleKeyClick(key) {
     // If key was enter
     else if (key.className.includes('ent_key')) {
         if (lastClickedInputField.value !== "") {
+            document.getElementsByClassName('video_list')[0].style.display = "block";
+            document.getElementsByClassName('video_player_div')[0].style.display = "none";
             searchYoutube();
         }
     }
@@ -108,6 +112,7 @@ function fillVideoList(items) {
                 video = event.target;
             }
             console.log(video.getAttribute('videoId'));
+            clickVideo(video.getAttribute('videoId'));
         });
 
     }
@@ -130,7 +135,26 @@ function createVideoItem(videoId, title, thumbnail) {
 
     return videoItem;
 }
-
+/*
+<iframe class="video_player"
+src="https://www.youtube.com/embed/IUMTaAQ43lY" frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen>
+</iframe>
+*/
+function clickVideo(videoId) {
+    document.getElementsByClassName('video_list')[0].style.display = "none";
+    var videoPlayerDiv = document.getElementsByClassName('video_player_div')[0];
+    videoPlayerDiv.innerHTML = '';
+    videoPlayerDiv.style.display = "block";
+    var video = document.createElement('iframe');
+    video.className = 'video_player';
+    video.src = "https://www.youtube.com/embed/" + videoId;
+    video.frameborder = '0';
+    video.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    video.allowFullscreen;
+    videoPlayerDiv.appendChild(video);
+}
 
 
 // Styling for enter key
