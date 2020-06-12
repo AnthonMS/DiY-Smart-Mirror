@@ -14,7 +14,6 @@ async function searchYoutube(value) {
     // do something with myJson
     clearVideoList();
     fillVideoList(myJson.items);
-
 }
 
 function clearVideoList() {
