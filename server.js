@@ -10,3 +10,7 @@ app.listen(port, () => console.log(`Example app listening at http://localhost:${
 app.get('/', (request, response) => {
   response.sendFile(__dirname + '/public/front-end.html');
 });
+
+app.get('/keyboard', (request, response) => {
+  response.sendFile(__dirname + '/public/plugins/virtual_keyboard/container.html');
+});

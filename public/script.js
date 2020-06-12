@@ -1,5 +1,14 @@
 function init() {
     // ##### Import Scripts ##### //
+    importScripts();
+    // ##### Import Stylesheets ##### //
+    importStyles();
+}
+
+
+
+
+function importScripts() {
     // Import Youtube Script
     var import_youtube_script = document.createElement('script');
     import_youtube_script.type = 'text/javascript';
@@ -23,10 +32,9 @@ function init() {
     import_keyboard_manager.type = 'text/javascript';
     import_keyboard_manager.src = '/scripts/keyboard_manager_script.js';
     document.head.appendChild(import_keyboard_manager);
+}
 
-
-
-    // ##### Import Stylesheets ##### //
+function importStyles() {
     // Import Keyboard Styling 
     var import_keyboard_styles = document.createElement('link');
     import_keyboard_styles.rel = 'stylesheet';
