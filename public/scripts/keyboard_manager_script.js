@@ -1,5 +1,11 @@
 console.log("Import - Keyboard Manager");
 
+document.getElementById('keyboard_container').style.display = "none";
+document.getElementById('keyboard_container').style.width = "690px";
+document.getElementById('keyboard_container').style.height = "220px";
+document.getElementById('keyboard_container').style.left = '220px';
+document.getElementById('keyboard_container').style.top = '500px';
+
 var mainContainer = document.getElementsByClassName('main-container')[0];
 var keyboardContainer = document.getElementById('keyboard_container');
 var containers = document.getElementsByClassName('container');

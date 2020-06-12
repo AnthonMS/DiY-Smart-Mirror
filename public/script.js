@@ -1,25 +1,54 @@
 function init() {
-    // ##### Import Scripts ##### //
-    importScripts();
+    includeHTML();
+    //console.log('Done Including HTML');
     // ##### Import Stylesheets ##### //
     importStyles();
+    //console.log('Done Including Styles');
+    // ##### Import Scripts ##### //
+    importScripts();
+    //console.log('Done Including Scripts');
 }
 
+function initSpotify() {
+    console.log('Init Spotify');
+}
 
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("w3-include-html");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }
 
 
 function importScripts() {
     // Import Youtube Script
-    var import_youtube_script = document.createElement('script');
-    import_youtube_script.type = 'text/javascript';
-    import_youtube_script.src = '/scripts/youtube_script.js';
-    document.head.appendChild(import_youtube_script);
+    // var import_youtube_script = document.createElement('script');
+    // import_youtube_script.type = 'text/javascript';
+    // import_youtube_script.src = '/scripts/youtube_script.js';
+    // document.head.appendChild(import_youtube_script);
 
-    // Import Container Manager Script
-    var import_container_manager = document.createElement('script');
-    import_container_manager.type = 'text/javascript';
-    import_container_manager.src = '/scripts/container_manager_script.js';
-    document.head.appendChild(import_container_manager);
 
     // Import Menu Manager Script
     var import_menu_manager = document.createElement('script');
@@ -32,6 +61,30 @@ function importScripts() {
     import_keyboard_manager.type = 'text/javascript';
     import_keyboard_manager.src = '/scripts/keyboard_manager_script.js';
     document.head.appendChild(import_keyboard_manager);
+
+    // Import Keyboard Manager Script
+    var test3 = document.createElement('script');
+    test3.type = 'text/javascript';
+    test3.src = '/plugins/virtual_keyboard/script.js';
+    document.head.appendChild(test3);
+
+    // // Import Youtube Script
+    var test1 = document.createElement('script');
+    test1.type = 'text/javascript';
+    test1.src = '/plugins/youtube/script.js';
+    document.head.appendChild(test1);
+
+    // Import Spotify Script
+    var test2 = document.createElement('script');
+    test2.type = 'text/javascript';
+    test2.src = '/plugins/spotify/script.js';
+    document.head.appendChild(test2);
+    
+    // Import Container Manager Script
+    var import_container_manager = document.createElement('script');
+    import_container_manager.type = 'text/javascript';
+    import_container_manager.src = '/scripts/container_manager_script.js';
+    document.head.appendChild(import_container_manager);
 }
 
 function importStyles() {
