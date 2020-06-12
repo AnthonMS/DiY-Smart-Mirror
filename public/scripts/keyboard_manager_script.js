@@ -4,8 +4,6 @@ var mainContainer = document.getElementsByClassName('main-container')[0];
 var keyboardContainer = document.getElementById('keyboard_container');
 var containers = document.getElementsByClassName('container');
 
-document.getElementsByClassName('video_list')[0].style.display = "none";
-
 var lastClickedInputField = null;
 var caps = false;
 var shift = false;
@@ -60,10 +58,13 @@ function handleKeyClick(key) {
     // If key was enter
     else if (key.className.includes('ent_key')) {
         if (lastClickedInputField.value !== "") {
-            document.getElementsByClassName('video_list')[0].style.display = "block";
-            document.getElementsByClassName('video_player_div')[0].innerHTML = "";
-            document.getElementsByClassName('video_player_div')[0].style.display = "none";
-            searchYoutube();
+            // If searching youtube videos
+            if (lastClickedInputField.id === 'youtube_search') {
+                document.getElementsByClassName('video_list')[0].style.display = "block";
+                document.getElementsByClassName('video_player_div')[0].innerHTML = "";
+                document.getElementsByClassName('video_player_div')[0].style.display = "none";
+                searchYoutube(lastClickedInputField.value);
+            }
         }
     }
     else {

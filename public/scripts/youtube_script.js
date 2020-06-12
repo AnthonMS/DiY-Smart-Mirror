@@ -1,10 +1,12 @@
 console.log('Import - Youtube Script');
 
-async function searchYoutube() {
+document.getElementsByClassName('video_list')[0].style.display = "none";
+
+async function searchYoutube(value) {
     var part = 'snippet';
     var maxResults = 5;
     var type = "video";
-    var q = encodeURIComponent(lastClickedInputField.value)
+    var q = encodeURIComponent(value)
     var key = "";
     var fetchUrl = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&maxResults=" + maxResults + "&type=" + type + "&q=" + q + "&key=" + key;
     const response = await fetch(fetchUrl);
