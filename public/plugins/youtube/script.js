@@ -17,6 +17,7 @@ document.getElementById('youtube_search').addEventListener('mousedown', (event) 
 document.getElementById('youtube_back_btn').addEventListener('mousedown', (event) => {
     document.getElementsByClassName('video_list')[0].style.display = "block";
     document.getElementsByClassName('video_player_div')[0].style.display = "none";
+    document.getElementsByClassName('video_player_div')[0].innerHTML = "";
 });
 
 async function searchYoutube(value) {

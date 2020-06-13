@@ -3,12 +3,30 @@ var lastClickedInputField = null;
 function init() {
     includeHTML();
     // ##### Import Scripts ##### //
-    //importScripts();
     setTimeout(function() { importScripts(); }, 500); // Wait .5 Sec to import scripts
+    startTime();
 }
 
-function initSpotify() {
-    console.log('Init Spotify');
+function startTime() {
+  var today = new Date();
+  var day = checkNumber(today.getDate());
+  var month = checkNumber(today.getMonth() + 1);
+  var year = today.getFullYear();
+  document.getElementsByClassName('date')[0].innerHTML = day + "/" + month + "-" + year;
+
+  var h = checkNumber(today.getHours());
+  var m = checkNumber(today.getMinutes());
+  var s = checkNumber(today.getSeconds());
+  // h = checkNumber(h);
+  // m = checkNumber(m);
+  // s = checkNumber(s);
+  document.getElementsByClassName('time')[0].innerHTML = h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkNumber(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  if (i === "0") {i = "00"};
+  return i;
 }
 
 function includeHTML() {
@@ -70,20 +88,4 @@ function importScripts() {
     spotify_script.type = 'text/javascript';
     spotify_script.src = '/plugins/spotify/script.js';
     document.head.appendChild(spotify_script);
-}
-
-function importStyles() {
-    // Import Keyboard Styling 
-    var import_keyboard_styles = document.createElement('link');
-    import_keyboard_styles.rel = 'stylesheet';
-    import_keyboard_styles.type = 'text/css';
-    import_keyboard_styles.href = '/styles/keyboard_styling.css';
-    document.head.appendChild(import_keyboard_styles);
-
-    // Import Youtube Styling 
-    var import_youtube_styles = document.createElement('link');
-    import_youtube_styles.rel = 'stylesheet';
-    import_youtube_styles.type = 'text/css';
-    import_youtube_styles.href = '/styles/youtube_styling.css';
-    document.head.appendChild(import_youtube_styles);
 }
