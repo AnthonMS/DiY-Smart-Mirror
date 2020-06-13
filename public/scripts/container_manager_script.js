@@ -1,6 +1,13 @@
 console.log("Import - Container Manager");
 
 var mainContainer = document.getElementsByClassName('main-container')[0];
+var containers = document.getElementsByClassName('container');
+var clickedContainerList = [];
+
+for (var i = 0; i < containers.length; i++)
+{
+    clickedContainerList.push(containers[i]);
+}
 
 var drag = false;
 var dragPos = null;
@@ -30,27 +37,22 @@ document.addEventListener('mouseup', (event) => {
     scaleElement = null;
 });
 document.addEventListener('mousemove', (event) => {
-    //console.log('PosX: ' + event.clientX + ' PosY: ' + event.clientY);
+    // Move Container to Position
     if (drag && dragPos !== null && dragElement !== null) {
-        dragElement.style.zIndex = "1";
         var posX = event.clientX - getOffset(mainContainer).left;
         var posY = event.clientY- getOffset(mainContainer).top;
         dragPos = { y: posY, x: posX };
-        
         moveElementToPos();
     }
 
+    // Scale Container to Size
     if (scale && scalePos !== null && scaleElement !== null) {
-        scaleElement.style.zIndex = "1";
-        // Create logic to scale element
         var posX = event.clientX - getOffset(mainContainer).left;
         var posY = event.clientY- getOffset(mainContainer).top;
         scalePos = { y: posY, x: posX };
         scaleElementToSize();
     }
 });
-
-
 
 
 // #### Event Listeners for Containers and Child Elements #### //
@@ -60,21 +62,7 @@ for (var i = 0; i < elements.length; i++)
 {
     elements[i].addEventListener('mousedown', (event) => {
         // Go through all containers and make zIndex 0
-        var containers = document.getElementsByClassName('container');
-        for (var i = 0; i < containers.length; i++)
-        {
-            containers[i].style.zIndex = "0";
-        }
-
-        // check if clicked element has class container
-        // if not find closest element that does
-        // And make the container that was closest to clicked element zIndex 1
-        if (event.target.className.includes('container')){
-            event.target.style.zIndex = "1";
-        }
-        else {
-            event.target.closest('.container').style.zIndex = "1";
-        }
+        stackContainers(event);
     });
 }
 
@@ -83,6 +71,7 @@ elements = document.getElementsByClassName('btn_drag');
 for (var i = 0; i < elements.length; i++)
 {
     elements[i].addEventListener('mousedown', (event) => {
+        //stackContainers(event);
         drag = true;
 
         var relX = event.clientX - getOffset(mainContainer).left;
@@ -107,6 +96,7 @@ elements = document.getElementsByClassName('btn_scale');
 for (var i = 0; i < elements.length; i++)
 {
     elements[i].addEventListener('mousedown', (event) => {
+        //stackContainers(event);
         scale = true;
 
         var relX = event.clientX - getOffset(mainContainer).left;
@@ -118,26 +108,53 @@ for (var i = 0; i < elements.length; i++)
 
 
 
+function stackContainers(clickedContainer) {
+    var container = null;
+    // check if clicked element has class container
+    // if not find closest element that does
+    // And make the container that was closest to clicked element zIndex 1
+    if (clickedContainer.target.className.includes('container')){
+        container = clickedContainer.target;
+    }
+    else {
+        container = clickedContainer.target.closest('.container');
+    }
 
+    // Go through clicked container list and remove clicked container from position
+    // and add it to the end of the list
+    for (var i = 0; i < clickedContainerList.length; i++) 
+    {
+        if (clickedContainerList[i].id == container.id) {
+            clickedContainerList.splice(i, 1);
+            clickedContainerList.push(container);
+        }
+    }
+    
+    // Go through clicked containers and add zIndex value corrosponding to position in list
+    for (var i = 0; i < clickedContainerList.length; i++) 
+    {
+        clickedContainerList[i].style.zIndex = i;
+    }
+}
 
 
 
 // Move dragElement to dragPos when function is called
 function moveElementToPos(){
-    var tmpPosX = dragPos.x - 10;
-    var tmpPosY = dragPos.y - 10;
+    var tmpPosX = dragPos.x + 7;
+    var tmpPosY = dragPos.y + 7;
 
-    dragElement.style.left = dragPos.x + 'px';
-    dragElement.style.top = dragPos.y + 'px';
+    dragElement.style.left = tmpPosX + 'px';
+    dragElement.style.top = tmpPosY + 'px';
 }
 
 // Scale scaleElement to scalePos when function is called
 function scaleElementToSize() {
-    var tmpPosX = scalePos.x - 10;
-    var tmpPosY = scalePos.y - 10;
+    var tmpPosX = scalePos.x - 5;
+    var tmpPosY = scalePos.y - 5;
     
-    var newWidth = scalePos.x - scaleElement.offsetLeft;
-    var newHeight = scalePos.y - scaleElement.offsetTop;
+    var newWidth = tmpPosX - scaleElement.offsetLeft;
+    var newHeight = tmpPosY - scaleElement.offsetTop;
     scaleElement.style.width = newWidth + 'px';
     scaleElement.style.height = newHeight + 'px';
 }

@@ -3,7 +3,6 @@ TODO's:
 - Make container buttons background color transparent.
 - Make containers have a title that says what it is. Ex. Youtube
 - Give keyboard thin boxes around the container. This is to get that in front of all the others without clicking a key.
-- Split files up more (Look further down for example) (https://www.w3schools.com/howto/howto_html_include.asp)
 
 Integrations:
 - E-Mail List
@@ -14,35 +13,3 @@ Integrations:
 - Soundcloud
 
 
-
-Split Now:
-Root
-- /public
-  - front-end.html
-  - styling.css
-  - script.js
-  - favicon.ico
-  - /images
-  - /scripts
-  - /styles
-
-Split New:
-Root
-- /public
-  - front-end.html
-  - styling.css
-  - script.js
-  - favicon.ico
-  - /images
-  - /plugins
-    - /managers
-      - (manager_scripts.js)
-    - /youtube
-      - container.html
-      - script.js
-      - styles.css
-    - /spotify
-      - container.html
-      - script.js
-      - styles.css
-  - /styles
