@@ -13,10 +13,6 @@ var containers = document.getElementsByClassName('container');
 var caps = false;
 var shift = false;
 
-document.getElementById('youtube_search').addEventListener('mousedown', (event) => {
-    lastClickedInputField = event.target;
-});
-
 
 var btn_keys = document.getElementsByClassName('btn_key');
 //console.log("Found " + btn_keys.length + " btn_keys");

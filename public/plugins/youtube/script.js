@@ -5,11 +5,23 @@ document.getElementById('youtube_container').style.width = "450px";
 document.getElementById('youtube_container').style.height = "350px";
 document.getElementById('youtube_container').style.left = '320px';
 document.getElementById('youtube_container').style.top = '100px';
+
 document.getElementsByClassName('video_list')[0].style.display = "none";
+
+
+document.getElementById('youtube_search').addEventListener('mousedown', (event) => {
+    lastClickedInputField = event.target;
+});
+
+
+document.getElementById('youtube_back_btn').addEventListener('mousedown', (event) => {
+    document.getElementsByClassName('video_list')[0].style.display = "block";
+    document.getElementsByClassName('video_player_div')[0].style.display = "none";
+});
 
 async function searchYoutube(value) {
     var part = 'snippet';
-    var maxResults = 5;
+    var maxResults = 10;
     var type = "video";
     var q = encodeURIComponent(value)
     var key = "";
@@ -28,6 +40,11 @@ function clearVideoList() {
 
 function fillVideoList(items) {
     var videoList = document.getElementsByClassName('video_list')[0];
+    if (items.length === 0) {
+        console.log('No Videos found!');
+        var videoItem = createVideoItem('NoVideoFound', 'No Videos Were Found', 'https://3kllhk1ibq34qk6sp3bhtox1-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/44-incredible-404-error-pages@3x-1560x760.png');
+        videoList.appendChild(videoItem);
+    }
     for (var i = 0; i < items.length; i++) {
         //console.log(items[i]);
         var videoId = items[i].id.videoId;
