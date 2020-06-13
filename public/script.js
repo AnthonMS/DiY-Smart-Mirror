@@ -1,12 +1,10 @@
+var lastClickedInputField = null;
+
 function init() {
     includeHTML();
-    //console.log('Done Including HTML');
-    // ##### Import Stylesheets ##### //
-    importStyles();
-    //console.log('Done Including Styles');
     // ##### Import Scripts ##### //
-    importScripts();
-    //console.log('Done Including Scripts');
+    //importScripts();
+    setTimeout(function() { importScripts(); }, 500); // Wait .5 Sec to import scripts
 }
 
 function initSpotify() {
@@ -42,13 +40,12 @@ function includeHTML() {
   }
 
 
-function importScripts() {
-    // Import Youtube Script
-    // var import_youtube_script = document.createElement('script');
-    // import_youtube_script.type = 'text/javascript';
-    // import_youtube_script.src = '/scripts/youtube_script.js';
-    // document.head.appendChild(import_youtube_script);
-
+function importScripts() {    
+    // Import Container Manager Script
+    var import_container_manager = document.createElement('script');
+    import_container_manager.type = 'text/javascript';
+    import_container_manager.src = '/scripts/container_manager_script.js';
+    document.head.appendChild(import_container_manager);
 
     // Import Menu Manager Script
     var import_menu_manager = document.createElement('script');
@@ -56,35 +53,23 @@ function importScripts() {
     import_menu_manager.src = '/scripts/menu_manager_script.js';
     document.head.appendChild(import_menu_manager);
 
-    // Import Keyboard Manager Script
-    var import_keyboard_manager = document.createElement('script');
-    import_keyboard_manager.type = 'text/javascript';
-    import_keyboard_manager.src = '/scripts/keyboard_manager_script.js';
-    document.head.appendChild(import_keyboard_manager);
+    // Import Virtual Keyboard Script
+    var virtual_keyboard_script = document.createElement('script');
+    virtual_keyboard_script.type = 'text/javascript';
+    virtual_keyboard_script.src = '/plugins/virtual_keyboard/script.js';
+    document.head.appendChild(virtual_keyboard_script);
 
-    // Import Keyboard Manager Script
-    var test3 = document.createElement('script');
-    test3.type = 'text/javascript';
-    test3.src = '/plugins/virtual_keyboard/script.js';
-    document.head.appendChild(test3);
-
-    // // Import Youtube Script
-    var test1 = document.createElement('script');
-    test1.type = 'text/javascript';
-    test1.src = '/plugins/youtube/script.js';
-    document.head.appendChild(test1);
+    // Import Youtube Script
+    var youtube_script = document.createElement('script');
+    youtube_script.type = 'text/javascript';
+    youtube_script.src = '/plugins/youtube/script.js';
+    document.head.appendChild(youtube_script);
 
     // Import Spotify Script
-    var test2 = document.createElement('script');
-    test2.type = 'text/javascript';
-    test2.src = '/plugins/spotify/script.js';
-    document.head.appendChild(test2);
-    
-    // Import Container Manager Script
-    var import_container_manager = document.createElement('script');
-    import_container_manager.type = 'text/javascript';
-    import_container_manager.src = '/scripts/container_manager_script.js';
-    document.head.appendChild(import_container_manager);
+    var spotify_script = document.createElement('script');
+    spotify_script.type = 'text/javascript';
+    spotify_script.src = '/plugins/spotify/script.js';
+    document.head.appendChild(spotify_script);
 }
 
 function importStyles() {

@@ -1,7 +1,5 @@
 console.log('PLUGIN: Youtube');
 
-// console.log('Import - Youtube Script');
-
 document.getElementById('youtube_container').style.display = "none";
 document.getElementById('youtube_container').style.width = "450px";
 document.getElementById('youtube_container').style.height = "350px";
