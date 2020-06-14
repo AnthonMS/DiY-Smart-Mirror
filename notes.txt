@@ -1,10 +1,8 @@
 TODO's:
-- Make container buttons background color transparent.
 - Make containers have a title that says what it is. Ex. Youtube
 - Give keyboard thin boxes around the container. This is to get that in front of all the others without clicking a key.
 
 Integrations:
-- E-Mail List
 - Home Automation (HA)
 - Face Detection
 - Weather

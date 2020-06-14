@@ -116,6 +116,23 @@ body {
 
 
 
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+
 
 .clock_div {
     position: absolute;
@@ -133,9 +150,12 @@ body {
     margin-top: 0px;
     margin-left: 0px;
     font-weight: bold;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .date {
     font-size: 20px;
-
 }

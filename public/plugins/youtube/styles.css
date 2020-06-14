@@ -85,22 +85,6 @@
     user-select: none; /* Standard */
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 15px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: white;
-    border-radius: 10px;
-}
-
 
 .video_player_div {
     position: absolute;

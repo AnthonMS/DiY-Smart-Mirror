@@ -88,4 +88,10 @@ function importScripts() {
     spotify_script.type = 'text/javascript';
     spotify_script.src = '/plugins/spotify/script.js';
     document.head.appendChild(spotify_script);
+  
+    // // Import Gmail Script
+    // var gmail_script = document.createElement('script');
+    // gmail_script.type = 'text/javascript';
+    // gmail_script.src = '/plugins/gmail/script.js';
+    // document.head.appendChild(gmail_script);
 }

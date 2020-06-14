@@ -1,0 +1,38 @@
+.mail_list {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.mail_item {
+    border: 0px solid blue;
+    border-bottom: 1px solid white;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    margin: 0px 0 5px 0;
+}
+
+.mail_item p {
+    
+    margin: 0 0 0 0;
+}
+
+
+.mail_title {
+    color: white;
+    font-size: 20px;
+}
+
+.mail_from {
+    color: white;
+    font-size: 15px;
+}
+
+.authorize_btn {
+    color: white;
+}
