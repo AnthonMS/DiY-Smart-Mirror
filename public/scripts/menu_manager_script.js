@@ -44,6 +44,16 @@ function handleButtonClick(button) {
             // Logic here
         }
     }
+    else if (button.textContent == "Hass.io") {
+        haContainer = document.getElementById('ha_container');
+        toggleContainer(haContainer);
+        if (haContainer.style.display == 'none') {
+            // Logic here
+        }
+        else {
+            // Logic here
+        }
+    }
 }
 
 

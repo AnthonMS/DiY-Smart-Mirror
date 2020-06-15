@@ -88,6 +88,12 @@ function importScripts() {
     spotify_script.type = 'text/javascript';
     spotify_script.src = '/plugins/spotify/script.js';
     document.head.appendChild(spotify_script);
+
+    // Import Home Assistant Controller
+    var ha_controller = document.createElement('script');
+    ha_controller.type = 'text/javascript';
+    ha_controller.src = '/plugins/home-assistant/controller.js';
+    document.head.appendChild(ha_controller);
   
     // // Import Gmail Script
     // var gmail_script = document.createElement('script');

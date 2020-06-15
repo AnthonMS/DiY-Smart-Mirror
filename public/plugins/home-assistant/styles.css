@@ -1,0 +1,38 @@
+.light_box {
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+
+.light_dimmer {
+    -webkit-appearance: none;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+}
+.light_dimmer:focus {
+    outline: none;
+}
+
+.light_dimmer::-webkit-slider-runnable-track {
+    background: grey;
+}
+
+
+.light_dimmer::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 5px;
+    height: 30px;
+    background: black;
+    box-shadow: -100vw 0 0 100vw white;
+}
+
+.light_dimmer::-moz-range-track {
+    height: 40px;
+    background: white;
+} 
