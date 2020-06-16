@@ -147,4 +147,10 @@ function importScripts() {
     ha_controller.type = 'text/javascript';
     ha_controller.src = '/plugins/home-assistant/controller.js';
     document.head.appendChild(ha_controller);
+
+    // Import Face-Detection Controller
+    var fd_controller = document.createElement('script');
+    fd_controller.type = 'text/javascript';
+    fd_controller.src = '/plugins/face-detection/controller.js';
+    document.head.appendChild(fd_controller);
 }

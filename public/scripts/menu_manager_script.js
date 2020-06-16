@@ -54,6 +54,16 @@ function handleButtonClick(button) {
             // Logic here
         }
     }
+    else if (button.textContent == "Face") {
+        fdContainer = document.getElementById('fd_container');
+        toggleContainer(fdContainer);
+        if (fdContainer.style.display == 'none') {
+            // Logic here
+        }
+        else {
+            // Logic here
+        }
+    }
 }
 
 

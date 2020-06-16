@@ -2,13 +2,22 @@ TODO's:
 - Make containers have a title that says what it is. Ex. Youtube
 - Give keyboard thin boxes around the container. This is to get that in front of all the others without clicking a key.
 - Make light color selection for HA Integration
+- Make GET functions for HA integrations, to update sliders with correct values.
 
 Integrations:
 - (DONE) YouTube
 - (DONE) Home Automation (HA)
-- Weather
+- (DONE) Weather
 - Face Detection
 - Spotify
 - Soundcloud
 - RTSP Streams
 
+
+
+
+Face Detection Notes:
+Get a python script to check camera if the face is recognised. Something like this script maybe https://github.com/EbenKouao/MMM-Face-Recognition-SMAI/blob/master/MMM-Face-Recognition-SMAI.py
+When a face is detected call the Smart Mirror web-server with a name of which user was detected, and when the server recieves this call, create image with src of users image and how this somewhere on the screen.
+
+OR make the face-detection controller.js look in the .json or .txt file located in the folder, and detect when it has been changed. When it has been changed update the face-detection container.html to display new image.
