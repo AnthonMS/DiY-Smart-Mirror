@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- <script src="https://apis.google.com/js/api.js"></script> -->
         <link rel="stylesheet" type="text/css" href="/styling.css">
         <script type="text/javascript" src="/script.js"></script>
     </head>
@@ -12,11 +11,11 @@
                 <div class="menu_button" id="keyboard_button">
                     <p class="btn_txt">Keyboard</p>
                 </div>
+                <div class="menu_button" id="weather_button">
+                    <p class="btn_txt">Weather</p>
+                </div>
                 <div class="menu_button" id="youtube_button">
                     <p class="btn_txt">Youtube</p>
-                </div>
-                <div class="menu_button" id="spotify_button">
-                    <p class="btn_txt">Spotify</p>
                 </div>
                 <div class="menu_button" id="ha_button">
                     <p class="btn_txt">Hass.io</p>
@@ -28,14 +27,16 @@
                 <p class="clock_txt date">12/06-2020</p>
             </div>
 
-            <div w3-include-html="plugins/virtual_keyboard/container.html"></div>
-            <div w3-include-html="plugins/youtube/container.html"></div>
-            <div w3-include-html="plugins/spotify/container.html"></div>
-            <div w3-include-html="plugins/home-assistant/container.html"></div>
-            <!-- <div w3-include-html="plugins/gmail/container.html"></div> -->
+            <div class="weather_main_div">
+                <p class="weather_txt title">ERROR</p>
+                <p class="weather_txt temp">Temp: ERROR</p>
+            </div>
+
+            <div include-html="plugins/virtual_keyboard/container.html"></div>
+            <div include-html="plugins/youtube/container.html"></div>
+            <div include-html="plugins/home-assistant/container.html"></div>
 
         </div>
         
-        <!-- <script type="text/javascript" src="/script.js"></script> -->
     </body>
 </html>

@@ -25,6 +25,7 @@ body {
 }
 
 .container {
+    background-color: black;
     border-radius: 5px;
     box-shadow: 0 0 5px 2px white;
     width: 100px;
@@ -157,5 +158,37 @@ body {
 }
 
 .date {
+    font-size: 20px;
+}
+
+
+.weather_main_div {
+    position: absolute;
+    right: 0px;
+    top: 95px;
+    width: 180px;
+}
+
+.weather_main_div p {
+    color: white;
+    text-align: center;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-top: 0px;
+    margin-left: 0px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.weather_txt {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.temp {
     font-size: 20px;
 }

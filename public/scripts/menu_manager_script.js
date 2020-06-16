@@ -24,10 +24,10 @@ function handleButtonClick(button) {
             document.getElementsByClassName('video_list')[0].style.display = "block";
         }
     }
-    else if (button.textContent == "Spotify") {
-        spotifyContainer = document.getElementById('spotify_container');
-        toggleContainer(spotifyContainer);
-        if (spotifyContainer.style.display == 'none') {
+    else if (button.textContent == "Weather") {
+        weatherContainer = document.getElementById('weather_container');
+        toggleContainer(weatherContainer);
+        if (weatherContainer.style.display == 'none') {
             // Logic here
         }
         else {

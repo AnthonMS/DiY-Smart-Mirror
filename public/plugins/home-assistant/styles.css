@@ -1,4 +1,4 @@
-.light_box {
+.dimmer_box {
     height: 30px;
     padding-left: 5px;
     padding-right: 5px;
@@ -35,4 +35,30 @@
 .light_dimmer::-moz-range-track {
     height: 40px;
     background: white;
-} 
+}
+
+
+.light_title {
+    color: white;
+    padding-left: 5px;
+    font-size: 17px;
+
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: inline;
+}
+
+.light_percentage {
+    color: white;
+    font-size: 17px;
+
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    display: inline;
+    font-weight: bold;
+}

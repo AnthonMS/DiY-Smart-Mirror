@@ -2,7 +2,7 @@ console.log('PLUGIN: Home Assistant');
 
 var haContainer = document.getElementById('ha_container');
 
-haContainer.style.display = "block";
+haContainer.style.display = "none";
 haContainer.style.width = "200px";
 haContainer.style.height = "350px";
 haContainer.style.left = '720px';
@@ -12,7 +12,12 @@ var apiToken = '';
 var haUrl = 'http://192.168.0.10:8123/api/services/light/turn_on';
 
 function onInputChange(value, sliderId) {
-    //console.log(sliderId + ': ' + value);
+    // console.log(sliderId + ': ' + value);
+    var dimmer = document.getElementById(sliderId);
+    var lightPercentage = dimmer.parentElement.parentElement.getElementsByClassName('light_percentage')[0];
+    lightPercentage.innerHTML = value + '%';
+
+
     var payload = {
         'entity_id': sliderId,
         'brightness': value * 2.55

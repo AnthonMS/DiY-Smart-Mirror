@@ -5,11 +5,20 @@
     <div class="btn_drag"></div>
     <div class="btn_close"></div>
     <div class="btn_scale"></div>
-
+    
     <div class="light_box">
-        <input type="range" id="light.anthon_room" class="light_dimmer" min="0" max="100" value="50" onchange="onInputChange(value, id)">
+        <p class="light_title">Anthon Room:</p>
+        <p class="light_percentage">50%</p>
+        <div class="dimmer_box">
+            <input type="range" id="light.anthon_room" class="light_dimmer" min="0" max="100" value="50" onchange="onInputChange(value, id)">
+        </div>
     </div>
+    
     <div class="light_box">
-        <input type="range" id="light.grono_lampe_1" class="light_dimmer" min="0" max="100" value="50" onchange="onInputChange(value, id)">
+        <p class="light_title">GRONO Lamp 1:</p>
+        <p class="light_percentage">50%</p>
+        <div class="dimmer_box">
+            <input type="range" id="light.grono_lampe_1" class="light_dimmer" min="0" max="100" value="50" onchange="onInputChange(value, id)">
+        </div>
     </div>
 </div>

@@ -1,11 +1,13 @@
 TODO's:
 - Make containers have a title that says what it is. Ex. Youtube
 - Give keyboard thin boxes around the container. This is to get that in front of all the others without clicking a key.
+- Make light color selection for HA Integration
 
 Integrations:
-- Home Automation (HA)
-- Face Detection
+- (DONE) YouTube
+- (DONE) Home Automation (HA)
 - Weather
+- Face Detection
 - Spotify
 - Soundcloud
 - RTSP Streams

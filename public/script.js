@@ -1,10 +1,13 @@
 var lastClickedInputField = null;
+var weatherAPI = '';
+var weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 function init() {
     includeHTML();
     // ##### Import Scripts ##### //
     setTimeout(function() { importScripts(); }, 500); // Wait .5 Sec to import scripts
     startTime();
+    getWeatherLatLon('55.194364', '11.744197');
 }
 
 function startTime() {
@@ -17,9 +20,6 @@ function startTime() {
   var h = checkNumber(today.getHours());
   var m = checkNumber(today.getMinutes());
   var s = checkNumber(today.getSeconds());
-  // h = checkNumber(h);
-  // m = checkNumber(m);
-  // s = checkNumber(s);
   document.getElementsByClassName('time')[0].innerHTML = h + ":" + m + ":" + s;
   var t = setTimeout(startTime, 500);
 }
@@ -29,6 +29,28 @@ function checkNumber(i) {
   return i;
 }
 
+
+
+async function getWeatherLatLon(lat, lon) {
+  console.log('Get Weather');
+  var uri = '?lat=' + lat + '&lon=' + lon + '&appid=' + weatherAPI;
+  const response = await fetch(weatherUrl + uri);
+  const myJson = await response.json(); //extract JSON from the http response
+  setWeather(myJson.weather[0].description, myJson.main.temp);
+  setTimeout(function() { getWeatherLatLon('55.194364', '11.744197'); }, 600000); // Wait 10 minuttes and get weather again
+}
+
+function setWeather(desc, temp) {
+  desc = desc[0].toUpperCase() + desc.slice(1); // make first letter Uppercase
+  temp = temp - 273.15; // Convert Kelvin to Celsius
+  document.getElementsByClassName('weather_txt title')[0].innerHTML = desc;
+  document.getElementsByClassName('weather_txt temp')[0].innerHTML = 'Temp: ' + temp + '°';
+}
+
+
+
+
+
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */
@@ -36,16 +58,18 @@ function includeHTML() {
     for (i = 0; i < z.length; i++) {
       elmnt = z[i];
       /*search for elements with a certain atrribute:*/
-      file = elmnt.getAttribute("w3-include-html");
+      file = elmnt.getAttribute("include-html");
       if (file) {
         /* Make an HTTP request using the attribute value as the file name: */
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4) {
-            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 200) {
+              elmnt.innerHTML = this.responseText;
+            }
             if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
             /* Remove the attribute, and call this function once more: */
-            elmnt.removeAttribute("w3-include-html");
+            elmnt.removeAttribute("include-html");
             includeHTML();
           }
         }
@@ -83,21 +107,21 @@ function importScripts() {
     youtube_script.src = '/plugins/youtube/script.js';
     document.head.appendChild(youtube_script);
 
-    // Import Spotify Script
-    var spotify_script = document.createElement('script');
-    spotify_script.type = 'text/javascript';
-    spotify_script.src = '/plugins/spotify/script.js';
-    document.head.appendChild(spotify_script);
+    // // Import Spotify Script
+    // var spotify_script = document.createElement('script');
+    // spotify_script.type = 'text/javascript';
+    // spotify_script.src = '/plugins/spotify/script.js';
+    // document.head.appendChild(spotify_script);
 
     // Import Home Assistant Controller
     var ha_controller = document.createElement('script');
     ha_controller.type = 'text/javascript';
     ha_controller.src = '/plugins/home-assistant/controller.js';
     document.head.appendChild(ha_controller);
-  
-    // // Import Gmail Script
-    // var gmail_script = document.createElement('script');
-    // gmail_script.type = 'text/javascript';
-    // gmail_script.src = '/plugins/gmail/script.js';
-    // document.head.appendChild(gmail_script);
+
+    // Import Weather Controller
+    var weather_controller = document.createElement('script');
+    weather_controller.type = 'text/javascript';
+    weather_controller.src = '/plugins/weather/controller.js';
+    document.head.appendChild(weather_controller);
 }
