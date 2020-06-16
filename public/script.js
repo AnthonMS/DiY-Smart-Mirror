@@ -6,8 +6,43 @@ function init() {
     includeHTML();
     // ##### Import Scripts ##### //
     setTimeout(function() { importScripts(); }, 500); // Wait .5 Sec to import scripts
+
+    // ##### Start Clock ##### //
     startTime();
-    getWeatherLatLon('55.194364', '11.744197');
+
+    // ##### Start Weather ##### //
+    //getWeatherLatLon('55.194364', '11.744197');
+
+    createEventListeners();
+}
+
+function createEventListeners() {
+  var btns = document.getElementsByClassName('btn');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('mousedown', (event) => {
+      if (event.target.className === 'btn clock') {
+        var txts = document.getElementsByClassName('clock_txt');
+        for (var j = 0; j < txts.length; j++) {
+          toggleDiv(txts[j]);
+        }
+      }
+      else if (event.target.className === 'btn weather') {
+        var txts = document.getElementsByClassName('weather_txt');
+        for (var j = 0; j < txts.length; j++) {
+          toggleDiv(txts[j]);
+        }
+      }
+    });
+  }
+}
+
+function toggleDiv(div) {
+  if (div.style.display === 'none') {
+    div.style.display = 'block';
+  }
+  else {
+    div.style.display = 'none';
+  }
 }
 
 function startTime() {
@@ -107,21 +142,9 @@ function importScripts() {
     youtube_script.src = '/plugins/youtube/script.js';
     document.head.appendChild(youtube_script);
 
-    // // Import Spotify Script
-    // var spotify_script = document.createElement('script');
-    // spotify_script.type = 'text/javascript';
-    // spotify_script.src = '/plugins/spotify/script.js';
-    // document.head.appendChild(spotify_script);
-
     // Import Home Assistant Controller
     var ha_controller = document.createElement('script');
     ha_controller.type = 'text/javascript';
     ha_controller.src = '/plugins/home-assistant/controller.js';
     document.head.appendChild(ha_controller);
-
-    // Import Weather Controller
-    var weather_controller = document.createElement('script');
-    weather_controller.type = 'text/javascript';
-    weather_controller.src = '/plugins/weather/controller.js';
-    document.head.appendChild(weather_controller);
 }

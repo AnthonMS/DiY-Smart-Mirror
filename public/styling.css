@@ -137,14 +137,14 @@ body {
 
 .clock_div {
     position: absolute;
-    right: 0px;
+    right: 30px;
     top: 30px;
     width: 180px;
 }
 
 .clock_txt {
     color: white;
-    text-align: center;
+    text-align: right;
     font-size: 30px;
     margin-block-end: 0;
     margin-block-start: 0;
@@ -164,14 +164,14 @@ body {
 
 .weather_main_div {
     position: absolute;
-    right: 0px;
+    right: 30px;
     top: 95px;
     width: 180px;
 }
 
 .weather_main_div p {
     color: white;
-    text-align: center;
+    text-align: right;
     margin-block-end: 0;
     margin-block-start: 0;
     margin-top: 0px;
@@ -191,4 +191,20 @@ body {
 
 .temp {
     font-size: 20px;
+    padding-top: 0px;
+}
+
+
+.btn {
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    right: -25px;
+    top: 0px;
+    width: 15px;
+    height: 100%;
+    height: 60px;
+}
+.btn:hover {
+    box-shadow: 0 0 5px 2px white;
 }

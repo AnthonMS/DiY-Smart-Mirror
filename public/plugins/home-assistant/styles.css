@@ -1,3 +1,8 @@
+.ha_entities {
+    overflow-y: auto;
+    height: 100%;
+}
+
 .dimmer_box {
     height: 30px;
     padding-left: 5px;
