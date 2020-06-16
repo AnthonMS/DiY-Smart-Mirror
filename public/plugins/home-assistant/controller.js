@@ -8,18 +8,21 @@ haContainer.style.height = "350px";
 haContainer.style.left = '720px';
 haContainer.style.top = '120px';
 
+var apiToken = '';
+var haUrl = 'http://192.168.0.10:8123/api/services/light/turn_on';
 
 function onInputChange(value, sliderId) {
-    console.log(sliderId + ': ' + value);
+    //console.log(sliderId + ': ' + value);
+    var payload = {
+        'entity_id': sliderId,
+        'brightness': value * 2.55
+    };
+    postData(haUrl, payload).then(data => {});
+    
 }
 
-var haUrl = 'http://192.168.0.10:8123/';
-var entityId = 'light.anthon_room';
 
-postData(haUrl, { 'state': 'off' })
-.then(data => {
-    console.log(data); // JSON data parsed by `response.json()` call
-});
+
 
 // Example POST method implementation:
 async function postData(url = '', data = {}) {
@@ -27,7 +30,7 @@ async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
-            'authorization': '',
+            "Authorization": "Bearer " + apiToken,
             'Content-Type': 'application/json',
             'origin': 'http://localhost:8080/'
         },
@@ -35,23 +38,3 @@ async function postData(url = '', data = {}) {
     });
     return response.json(); // parses JSON response into native JavaScript objects
 }
-
-////// POST
-// turn_light_on:
-//   url: http://localhost:8123/api/states/light.study_light
-//   method: POST
-//   headers:
-//     authorization: 'Bearer ABCDEFGH'
-//     content-type: 'application/json'
-//   payload: '{"state":"on"}'
-
-
-////// GET
-// url = "http://localhost:8123/ENDPOINT"
-// headers = {
-//     "Authorization": "Bearer ABCDEFGH",
-//     "content-type": "application/json",
-// }
-
-// response = get(url, headers=headers)
-// print(response.text)
