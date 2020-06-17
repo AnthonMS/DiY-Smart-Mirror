@@ -1,9 +1,9 @@
 # DiY Smart Touch Mirror (WIP)
 
-*FYI: This project will be using a raspberry pi with an IR frame, something like this: https://www.amazon.co.uk/Deyowo-Infrared-Overlay-Interactive-Whiteboard/dp/B07XTM964X 
+**FYI: This project will be using a raspberry pi with an IR frame, something like this: https://www.amazon.co.uk/Deyowo-Infrared-Overlay-Interactive-Whiteboard/dp/B07XTM964X 
 
 This is a proof af concept, I have not tested any of this with the IR frame. But since the IR frame plugged into a pi, should work like a regular touch screen.
-I will not be buying a the components for at least a couple of months. And from next month, this project will be put on pause for, I don't know how long. This is because I am moving into a new house, and there is a lot of renovations to be done, before I even start making it smart. So theres that, hopefully I will be able to finish this in the next 6 months or so. I will of course update this readme when I have started working on it again. So as long as this text is here, I am not working on it.*
+I will not be buying a the components for at least a couple of months. And from next month, this project will be put on pause for, I don't know how long. This is because I am moving into a new house, and there is a lot of renovations to be done, before I even start making it smart. So theres that, hopefully I will be able to finish this in the next 6 months or so. I will of course update this readme when I have started working on it again. So as long as this text is here, I am not working on it.**
 
 
 This is the repo for my DiY Smart Mirror with touch functionality. The containers can be dragged around on screen and scaled bigger or smaller. It has buttons to hide/show desired containers. 
@@ -48,7 +48,7 @@ Right now the haUrl is a local url with full "api/services/light/turn_on". This 
 Because it should only call that service when changing light brightness. 
 When I add switches and toggle buttons it should add new URI on those button clicks.
 
-*Remember to set api: in root of ha configuration and set cors_allowed_origins: under http in configuration. Take a look here for more information: https://www.home-assistant.io/integrations/http/*
+**Remember to set api: in root of ha configuration and set cors_allowed_origins: under http in configuration. Take a look here for more information: https://www.home-assistant.io/integrations/http/**
 
 #### Face Detection
 
