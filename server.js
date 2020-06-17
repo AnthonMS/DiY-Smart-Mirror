@@ -15,7 +15,7 @@ app.get('/', (request, response) => {
 // This is so the controller can fetch this file, and read which user to display.
 // This JSON file will be updated by a python script that checks for faces in the background
 app.get('/face-detection', (request, response) => {
-  response.sendFile(__dirname + '/public/plugins/face-detection/test.json');
+  response.sendFile(__dirname + '/public/plugins/face-detection/test.txt');
 });
 
 // app.post('/', function(request, response) {
