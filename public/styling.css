@@ -8,6 +8,14 @@ body {
     background-color: black;
 }
 
+/* This will disable text selection for all <p> fields*/
+p {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
 .main-container {
     background-color: black;
     border: 0px solid white;

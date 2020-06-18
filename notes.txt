@@ -30,7 +30,5 @@ When a face is detected call the Smart Mirror web-server with a name of which us
 
 OR make the face-detection controller.js look in the .json or .txt file located in the folder, and detect when it has been changed. When it has been changed, update the face-detection container.html to display new image.
 
-Cant use depp learning, since this will be running on a Pi, and that is too slow to run real time video face detection.
+Cant use deep learning, since this will be running on a Pi, and that is too slow to run real time video face detection.
 So I might just use the script mentioned above.
-Use deep learning to recognise face, this is much more reliable, but a bit longer process. But a good tutorial is: https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/
-
