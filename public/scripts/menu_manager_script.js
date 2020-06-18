@@ -1,4 +1,4 @@
-console.log("Import - Menu Manager");
+console.log("IMPORT: Menu Manager");
 
 var mainContainer = document.getElementsByClassName('main-container')[0];
 //document.getElementById('youtube_container');

@@ -1,15 +1,18 @@
 TODO's:
 - Make containers have a title that says what it is. Ex. Youtube
 - Give keyboard thin boxes around the container. This is to get that in front of all the others without clicking a key.
+- Maybe the keyboard button should be 100% width at the bottom of the screen instead of in the button menu. I have not decided yet.
 - Make light color selection for HA Integration
 - Make GET functions for HA integrations, to update sliders with correct values.
 - Show QR Code for WiFi Connection on screen if face detected is a guest.
+- I don't know if the compliment text should have a button to hide/show the text. It has one for now, but might remove it completely, or maybe add a button at the bottom of the screen.
+
 
 Integrations:
 - (DONE) YouTube
 - (DONE) Home Automation (HA)
 - (DONE) Weather
-- Random (Custom) compliments
+- (DONE) Random (Custom) compliments
 - Face Detection
 - Spotify
 - Soundcloud
@@ -17,13 +20,8 @@ Integrations:
 
 
 Weather API Notes:
-Need to translate the description to danish. Maybe use Google Translate API. If it works like the youtube search API.
-
-Random (Custom) compliments Notes:
-This should be a json file that is hosted on the server like with the face detection text file.
-This JSON file should include a bunch of different compliments, when the plugin is loaded, it should load this json into a local variable.
-Every 5th minutte, it should display a new, random compliment.
-The compliments I will be adding to my json, will be in danish, since I want them in danish.
+Need to translate the description to danish. Google translate API costs money, so thats a no-go.
+Check out yandex translation API. This requires phone verification, and I don't have my phone on me.
 
 
 Face Detection Notes:

@@ -1,4 +1,4 @@
-console.log("Import - Container Manager");
+console.log("IMPORT: Container Manager");
 
 var mainContainer = document.getElementsByClassName('main-container')[0];
 var containers = document.getElementsByClassName('container');

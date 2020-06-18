@@ -117,7 +117,13 @@ function includeHTML() {
   }
 
 
-function importScripts() {    
+function importScripts() {
+    // Import Google Translate Script
+    var import_translate = document.createElement('script');
+    import_translate.type = 'text/javascript';
+    import_translate.src = '/scripts/translate_script.js';
+    document.head.appendChild(import_translate);
+
     // Import Container Manager Script
     var import_container_manager = document.createElement('script');
     import_container_manager.type = 'text/javascript';
