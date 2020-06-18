@@ -104,7 +104,6 @@ body {
     margin-top: 0px;
     margin-left: 0px;
     color: white;
-    font-size: 25px;
     font-weight: bold;
     line-height: 50px;
     padding-left: 10px;
@@ -114,7 +113,12 @@ body {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
-
+.big_txt {
+    font-size: 25px;
+}
+.small_txt {
+    font-size: 23px;
+}
 
 
 /* width */

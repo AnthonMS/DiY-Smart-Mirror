@@ -64,6 +64,16 @@ function handleButtonClick(button) {
             // Logic here
         }
     }
+    else if (button.textContent == "Compliments") {
+        complimentContainer = document.getElementById('compliment_container');
+        toggleContainer(complimentContainer);
+        if (complimentContainer.style.display == 'none') {
+            // Logic here
+        }
+        else {
+            // Logic here
+        }
+    }
 }
 
 

@@ -3,7 +3,7 @@ console.log('PLUGIN: Face-Detection');
 var fdContainer = document.getElementById('fd_container');
 var faceImage = document.getElementsByClassName('face_image')[0];
 
-fdContainer.style.display = "block";
+fdContainer.style.display = "none";
 fdContainer.style.width = "140px";
 fdContainer.style.height = "140px";
 fdContainer.style.left = '500px';

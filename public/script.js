@@ -153,4 +153,10 @@ function importScripts() {
     fd_controller.type = 'text/javascript';
     fd_controller.src = '/plugins/face-detection/controller.js';
     document.head.appendChild(fd_controller);
+
+    // Import Compliment Controller
+    var compliment_controller = document.createElement('script');
+    compliment_controller.type = 'text/javascript';
+    compliment_controller.src = '/plugins/compliments/controller.js';
+    document.head.appendChild(compliment_controller);
 }

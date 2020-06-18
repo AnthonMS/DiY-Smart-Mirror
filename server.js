@@ -18,6 +18,11 @@ app.get('/face-detection', (request, response) => {
   response.sendFile(__dirname + '/public/plugins/face-detection/test.txt');
 });
 
+
+app.get('/compliments', (request, response) => {
+  response.sendFile(__dirname + '/public/plugins/compliments/compliments.json');
+});
+
 // app.post('/', function(request, response) {
 //   console.log('POST /')
 //   console.dir(request.url)
