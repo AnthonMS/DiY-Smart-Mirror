@@ -11,7 +11,7 @@ function init() {
     startTime();
 
     // ##### Start Weather ##### //
-    //getWeatherLatLon('55.194364', '11.744197');
+    //getWeatherLatLon('55.194364', '11.744197', 'da');
 
     createEventListeners();
 }
@@ -66,12 +66,11 @@ function checkNumber(i) {
 
 
 
-async function getWeatherLatLon(lat, lon) {
+async function getWeatherLatLon(lat, lon, lang) {
   console.log('Get Weather');
-  var uri = '?lat=' + lat + '&lon=' + lon + '&lang=da' + '&appid=' + weatherAPI;
+  var uri = '?lat=' + lat + '&lon=' + lon + '&lang=' + lang + '&appid=' + weatherAPI;
   const response = await fetch(weatherUrl + uri);
   const myJson = await response.json(); //extract JSON from the http response
-  console.log(myJson);
   setWeather(myJson.weather[0].description, myJson.main.temp);
   setTimeout(function() { getWeatherLatLon('55.194364', '11.744197'); }, 600000); // Wait 10 minuttes and get weather again
 }
@@ -121,12 +120,6 @@ function includeHTML() {
 
 
 function importScripts() {
-    // Import Google Translate Script
-    var import_translate = document.createElement('script');
-    import_translate.type = 'text/javascript';
-    import_translate.src = '/scripts/translate_script.js';
-    document.head.appendChild(import_translate);
-
     // Import Container Manager Script
     var import_container_manager = document.createElement('script');
     import_container_manager.type = 'text/javascript';

@@ -14,8 +14,6 @@ Integrations:
 - (DONE) Weather
 - (DONE) Random (Custom) compliments
 - Face Detection
-- Spotify
-- Soundcloud
 - RTSP Streams
 
 
