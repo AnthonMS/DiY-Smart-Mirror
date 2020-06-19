@@ -19,9 +19,6 @@ Integrations:
 - RTSP Streams
 
 
-Weather API Notes:
-Need to translate the description to danish. Google translate API costs money, so thats a no-go.
-Check out yandex translation API. This requires phone verification, and I don't have my phone on me.
 
 
 Face Detection Notes:

@@ -151,7 +151,7 @@ p {
     position: absolute;
     right: 30px;
     top: 30px;
-    width: 180px;
+    width: 80%;
 }
 
 .clock_txt {
@@ -178,7 +178,7 @@ p {
     position: absolute;
     right: 30px;
     top: 95px;
-    width: 180px;
+    width: 80%;
 }
 
 .weather_main_div p {

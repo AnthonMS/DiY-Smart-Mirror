@@ -68,9 +68,10 @@ function checkNumber(i) {
 
 async function getWeatherLatLon(lat, lon) {
   console.log('Get Weather');
-  var uri = '?lat=' + lat + '&lon=' + lon + '&appid=' + weatherAPI;
+  var uri = '?lat=' + lat + '&lon=' + lon + '&lang=da' + '&appid=' + weatherAPI;
   const response = await fetch(weatherUrl + uri);
   const myJson = await response.json(); //extract JSON from the http response
+  console.log(myJson);
   setWeather(myJson.weather[0].description, myJson.main.temp);
   setTimeout(function() { getWeatherLatLon('55.194364', '11.744197'); }, 600000); // Wait 10 minuttes and get weather again
 }
@@ -78,6 +79,8 @@ async function getWeatherLatLon(lat, lon) {
 function setWeather(desc, temp) {
   desc = desc[0].toUpperCase() + desc.slice(1); // make first letter Uppercase
   temp = temp - 273.15; // Convert Kelvin to Celsius
+  temp = Math.round(temp); // This will round to int without decimals
+  //temp = temp.toFixed(2); // This will round decimals down to 2
   document.getElementsByClassName('weather_txt title')[0].innerHTML = desc;
   document.getElementsByClassName('weather_txt temp')[0].innerHTML = 'Temp: ' + temp + '°';
 }
