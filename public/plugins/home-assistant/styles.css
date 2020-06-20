@@ -3,6 +3,18 @@
     height: 100%;
 }
 
+.light_box {
+    border: 0px solid red;
+}
+
+.color_picker_div {
+    border: 0px solid red;
+}
+.color_picker {
+    height: 20px;
+    width: 95%;
+}
+
 .dimmer_box {
     height: 30px;
     padding-left: 5px;
